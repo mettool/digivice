@@ -1,3 +1,13 @@
-body{
+body {
     background-image: url(../assets/imagenes/bg.png);
+    animation: animateBg 20s linear infinite;
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
