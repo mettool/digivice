@@ -26,15 +26,15 @@ fetch('https://digimon-api.vercel.app/api/digimon')
     .then(response => response.json())
     .then(([digimon]) => {
         digivice.innerHTML = `
-        <div class="card text-center mx-auto" style="width: 10rem;">
+        <div class="card text-center mx-auto" style="width: 18rem;">
             <img class="card-img-top" src=${digimon.img}>
             <div class="card-body">
                 <h5>${digimon.name}</h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">${digimon.level}</li>            
+                <li class="list-group-item">Nivel: ${digimon.level}</li>            
             </ul>
-        </div>
+        </div>        
         ` ;
     });
 };
