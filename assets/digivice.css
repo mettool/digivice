@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Efectos para dispositivos con mouse*/
 @media (hover: hover) {
     .cardH {
@@ -16,3 +17,18 @@
     max-width: 50px;
     height: auto;
   }
+=======
+body {
+    background-image: url(../assets/imagenes/bg.png);
+    animation: animateBg 20s linear infinite;
+}
+
+@keyframes animateBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+>>>>>>> main
