@@ -1,13 +1,18 @@
-body {
-    background-image: url(../assets/imagenes/bg.png);
-    animation: animateBg 20s linear infinite;
+/*Efectos para dispositivos con mouse*/
+@media (hover: hover) {
+    .cardH {
+        transition: all 0.3s;
+        opacity: 0.5;
+    }
+
+    .cardH:hover {
+        transform: scale(1.05);
+        opacity: 1.0;
+
+    }
 }
 
-@keyframes animateBg {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
+.img-lista {
+    max-width: 50px;
+    height: auto;
+  }
