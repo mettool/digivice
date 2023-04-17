@@ -21,20 +21,26 @@ body {
     .cardH:hover img {
         opacity: 1.0;
     }
-
-
 }
+
 /* Ancho para la tabla y el selector junto a su tarjeta*/
 .tableW{
     width: 22rem;
 }
 
 .selectW{
-    width: 18rem;
+    width: 22rem;
 }
 
 /* Tamaño maximo para las imagenes de la tabla*/
 .img-lista {
     max-width: 50px;
     height: auto;
+}
+
+/* Tamaño spinner */
+
+.loading{
+    width: 22rem;
+    height: 22rem;
 }

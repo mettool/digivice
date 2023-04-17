@@ -17,15 +17,20 @@ function tabla(){
         .then(resp => {
             crearTabla(resp);
         });
-// Accedo al div con id "digiData" y le quito las clases bootstrap ya que no las necesito, luego limpio su contenido HTML.
+// Accedo al div con id "digiData" y le quito las clases bootstrap ya que no las necesito, luego reemplazo el contenido HTML con un spinner para indicarle al usuario que los datos estan cargando.
         contenido = document.getElementById("digiData");
         digiData.className=("");
-        contenido.innerHTML = "";
+        contenido.innerHTML = `
+        <div class="text-center">
+            <div class="spinner-grow loading" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        `;
 
-// Escribo el nuevo contenido HTML, en el que agrego un div adicional con id digiTabla para escribir en el los datos de la API.
+// Elimino el spinner y luego escribo el nuevo contenido HTML, en el que agrego un div adicional con id digiTabla para escribir en el los datos de la API.
     function crearTabla(resp){
-        contenido.innerHTML =
-        `
+        contenido.innerHTML =`
         <table class="mx-auto text-center tableW bg-white border border-2 border-secondary">
         <thead class="table-light">
         <tr>
@@ -64,18 +69,25 @@ fetch('https://digimon-api.vercel.app/api/digimon')
     .then(resp => {
         crearGrilla(resp);
     });
-// Accedo al div con id "digiData" y le doy las clases bootstrap que necesito, luego limpio su contenido HTML.
+// Accedo al div con id "digiData" y le doy las clases bootstrap que necesito, reemplazo el contenido HTML con un spinner para indicarle al usuario que los datos estan cargando.
     contenido = document.getElementById("digiData");
     digiData.className=("row mx-auto text-center");
-    contenido.innerHTML = "";
+    contenido.innerHTML = `
+    <div class="text-center">
+        <div class="spinner-grow loading" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    `;
 
-// Agrego el nuevo contenido HTML en el <div> con id "digiData" utilizando los datos de la API.
+// Cuando los datos estan listos, elimino el spinner y agrego el nuevo contenido HTML en el <div> con id "digiData" utilizando los datos de la API.
 // El nuevo <div> con id "capturarModal" contiene atributos "data" personalizados que seran utilizados para desplegar los datos del Digimon seleccionado
 // de forma individual en pantalla utilizando un modal de bootstrap cuando el usuario haga click en el.
 function crearGrilla(resp){
+    contenido.innerHTML = "";
     for(digimon of resp){
         contenido.innerHTML +=
-        `   
+        `  
         <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
             <div class="card cardH my-2 bg-white border border-2 border-secondary" id="capturaModal" data-imagen="${digimon.img}" data-nombre="Nombre: ${digimon.name}" data-nivel="Nivel: ${digimon.level}" onclick="datosModal(this);">
                 <div class="card-body">
@@ -106,7 +118,7 @@ function select() {
 // el contenido HTML con un selector que contiene solo la primer opcion
     contenido = document.getElementById("digiData");
     digiData.className = ("");
-    contenido.innerHTML = 
+    contenido.innerHTML =
     `
     <select id="selectorDigimon" class="card text-center mx-auto border border-2 border-secondary selectW">
         <option>Selecciona un Digimon</option>
