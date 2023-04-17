@@ -1,34 +1,40 @@
-<<<<<<< HEAD
+body {
+    background-image: url(../assets/imagenes/bg.jpg);
+    background-attachment: fixed;
+}
+
 /*Efectos para dispositivos con mouse*/
 @media (hover: hover) {
     .cardH {
         transition: all 0.3s;
-        opacity: 0.5;
     }
 
     .cardH:hover {
         transform: scale(1.05);
-        opacity: 1.0;
-
     }
+
+    .cardH img {
+        opacity: 0.5;
+        transition: all 0.3s;
+    }
+
+    .cardH:hover img {
+        opacity: 1.0;
+    }
+
+
+}
+/* Ancho para la tabla y el selector junto a su tarjeta*/
+.tableW{
+    width: 22rem;
 }
 
+.selectW{
+    width: 18rem;
+}
+
+/* Tamaño maximo para las imagenes de la tabla*/
 .img-lista {
     max-width: 50px;
     height: auto;
-  }
-=======
-body {
-    background-image: url(../assets/imagenes/bg.png);
-    animation: animateBg 20s linear infinite;
 }
-
-@keyframes animateBg {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
->>>>>>> main
