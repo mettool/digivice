@@ -1,3 +1,5 @@
+Trabajo correspondiente al curso de desarrollo Full Stack Python de Talento Digital para Chile.
+
 Entrega de "Practica de consolidacion 2" segun las siguientes instrucciones:
 
 "DIGIMON
